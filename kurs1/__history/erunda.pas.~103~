@@ -1,0 +1,282 @@
+unit erunda;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  System.ImageList, FMX.ImgList, FMX.Controls.Presentation, FMX.StdCtrls,
+  FMX.Objects;
+
+type
+  TForm4 = class(TForm)
+    Button1: TButton;
+    ImageList1: TImageList;
+    StyleBook1: TStyleBook;
+    Label1: TLabel;
+    Panel1: TPanel;
+    Rectangle3: TRectangle;
+    Panel2: TPanel;
+    Rectangle2: TRectangle;
+    Rectangle1: TRectangle;
+    Rectangle4: TRectangle;
+    Rectangle5: TRectangle;
+    Rectangle6: TRectangle;
+    Rectangle7: TRectangle;
+    Rectangle8: TRectangle;
+    Label2: TLabel;
+    ѕроверить: TButton;
+    procedure Rectangle5MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle5MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Rectangle5MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle4MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle4MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Rectangle4MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle6MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle6MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Rectangle6MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle7MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle7MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Rectangle7MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle8MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle8MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Rectangle8MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Rectangle1MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure ѕроверитьClick(Sender: TObject);
+   
+ private
+
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+      var bool1,bool2,bool3,bool4,bool5 : boolean; xx,yy,y0 : Single;
+{$R *.fmx}
+
+procedure TForm4.Rectangle5MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+      if button <> TMouseButton.mbLeft then bool1:=false
+      else begin
+      if (bool2=false) and (bool3=false) and (bool4=false) and (bool5=false) then begin
+        bool1:=true;
+        xx:=X;
+        yy:=Y;
+      end;
+      end;
+end;
+
+procedure TForm4.Rectangle5MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+ if (bool=True) then begin
+ if Rectangle5.Position.Y<1 then Rectangle5.Position.Y:=Rectangle5.Position.Y+1;
+ if Rectangle5.Position.Y>159 then  Rectangle5.Position.Y:=Rectangle5.Position.Y-1; //чтобы компонент не застр€л
+ if Rectangle5.Position.X<1 then Rectangle5.Position.X:=Rectangle5.Position.X+1;
+ if Rectangle5.Position.X>327 then Rectangle5.Position.X:=Rectangle5.Position.X-1;
+
+ if (Rectangle5.Position.X+X-XX<1) or (Rectangle5.Position.X+X-XX>327)   // ограничени€
+ or (Rectangle5.Position.Y+Y-YY<1) or (Rectangle5.Position.Y+Y-YY>159)
+ then
+  Exit
+ else begin
+ Rectangle5.Position.X:=Rectangle5.Position.X+X-XX;
+ Rectangle5.Position.Y:=Rectangle5.Position.Y+Y-YY;       //двигает компонент, следу€ за указателем
+end;
+  end;
+end;
+
+procedure TForm4.Rectangle5MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+    bool:=false;
+end;
+
+procedure TForm4.Rectangle6MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+ if button <> TMouseButton.mbLeft then bool:=false
+      else begin
+        bool:=true;
+        xx:=X;
+        yy:=Y;
+      end;
+end;
+
+procedure TForm4.Rectangle6MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+      if (bool=True) then begin
+ if Rectangle6.Position.Y<1 then Rectangle6.Position.Y:=Rectangle6.Position.Y+1;
+ if Rectangle6.Position.Y>159 then  Rectangle6.Position.Y:=Rectangle6.Position.Y-1; //чтобы компонент не застр€л
+ if Rectangle6.Position.X<1 then Rectangle6.Position.X:=Rectangle6.Position.X+1;
+ if Rectangle6.Position.X>327 then Rectangle6.Position.X:=Rectangle6.Position.X-1;
+
+ if (Rectangle6.Position.X+X-XX<1) or (Rectangle6.Position.X+X-XX>327)   // ограничени€
+ or (Rectangle6.Position.Y+Y-YY<1) or (Rectangle6.Position.Y+Y-YY>159)
+ then
+  Exit
+ else begin
+ Rectangle6.Position.X:=Rectangle6.Position.X+X-XX;
+ Rectangle6.Position.Y:=Rectangle6.Position.Y+Y-YY;       //двигает компонент, следу€ за указателем
+end;
+  end;
+end;
+
+procedure TForm4.Rectangle6MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+      bool:=false;
+end;
+
+procedure TForm4.Rectangle7MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+      if button <> TMouseButton.mbLeft then bool:=false
+      else begin
+        bool:=true;
+        xx:=X;
+        yy:=Y;
+      end;
+end;
+
+
+procedure TForm4.Rectangle7MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+ if (bool=True) then begin
+ if Rectangle7.Position.Y<1 then Rectangle7.Position.Y:=Rectangle7.Position.Y+1;
+ if Rectangle7.Position.Y>159 then  Rectangle7.Position.Y:=Rectangle7.Position.Y-1; //чтобы компонент не застр€л
+ if Rectangle7.Position.X<1 then Rectangle7.Position.X:=Rectangle7.Position.X+1;
+ if Rectangle7.Position.X>327 then Rectangle7.Position.X:=Rectangle7.Position.X-1;
+
+ if (Rectangle7.Position.X+X-XX<1) or (Rectangle7.Position.X+X-XX>327)   // ограничени€
+ or (Rectangle7.Position.Y+Y-YY<1) or (Rectangle7.Position.Y+Y-YY>159)
+ then
+  Exit
+ else begin
+ Rectangle7.Position.X:=Rectangle7.Position.X+X-XX;
+ Rectangle7.Position.Y:=Rectangle7.Position.Y+Y-YY;       //двигает компонент, следу€ за указателем
+end;
+  end;
+end;
+
+procedure TForm4.Rectangle7MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+     bool:=false;
+end;
+
+procedure TForm4.Rectangle8MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+      if button <> TMouseButton.mbLeft then bool:=false
+      else begin
+        bool:=true;
+        xx:=X;
+        yy:=Y;
+      end;
+end;
+
+procedure TForm4.Rectangle8MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+    if (bool=True) then begin
+ if Rectangle8.Position.Y<1 then Rectangle8.Position.Y:=Rectangle8.Position.Y+1;
+ if Rectangle8.Position.Y>159 then  Rectangle8.Position.Y:=Rectangle8.Position.Y-1; //чтобы компонент не застр€л
+ if Rectangle8.Position.X<1 then Rectangle8.Position.X:=Rectangle8.Position.X+1;
+ if Rectangle8.Position.X>327 then Rectangle8.Position.X:=Rectangle8.Position.X-1;
+
+ if (Rectangle8.Position.X+X-XX<1) or (Rectangle8.Position.X+X-XX>327)   // ограничени€
+ or (Rectangle8.Position.Y+Y-YY<1) or (Rectangle8.Position.Y+Y-YY>159)
+ then
+  Exit
+ else begin
+ Rectangle8.Position.X:=Rectangle8.Position.X+X-XX;
+ Rectangle8.Position.Y:=Rectangle8.Position.Y+Y-YY;       //двигает компонент, следу€ за указателем
+end;
+  end;
+end;
+
+procedure TForm4.Rectangle8MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+   bool:=false;
+end;
+
+procedure TForm4.ѕроверитьClick(Sender: TObject);
+begin
+if (rectangle5.Position.X < rectangle7.position.X)and (rectangle7.Position.X < rectangle4.position.X)
+and (rectangle4.Position.X < rectangle6.position.X) and (rectangle6.Position.X < rectangle8.position.X)
+   then showmessage('ss');
+end;
+
+procedure TForm4.Rectangle1MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+y0:=y;
+label1.Text:=FloatToSTR(y0);
+end;
+
+procedure TForm4.Rectangle4MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+       if button <> TMouseButton.mbLeft then bool:=false
+      else begin
+        bool:=true;
+        xx:=X;
+        yy:=Y;
+      end;
+end;
+
+procedure TForm4.Rectangle4MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+begin
+      if (bool=True) then begin
+ if Rectangle4.Position.Y<1 then Rectangle4.Position.Y:=Rectangle4.Position.Y+1;
+ if Rectangle4.Position.Y>159 then  Rectangle4.Position.Y:=Rectangle4.Position.Y-1; //чтобы компонент не застр€л
+ if Rectangle4.Position.X<1 then Rectangle4.Position.X:=Rectangle4.Position.X+1;
+ if Rectangle4.Position.X>327 then Rectangle4.Position.X:=Rectangle4.Position.X-1;
+
+ if (Rectangle4.Position.X+X-XX<1) or (Rectangle4.Position.X+X-XX>327)   // ограничени€
+ or (Rectangle4.Position.Y+Y-YY<1) or (Rectangle4.Position.Y+Y-YY>159)
+ then
+  Exit
+ else begin
+ Rectangle4.Position.X:=Rectangle4.Position.X+X-XX;
+ Rectangle4.Position.Y:=Rectangle4.Position.Y+Y-YY;       //двигает компонент, следу€ за указателем
+end;
+  end;
+end;
+
+procedure TForm4.Rectangle4MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+    bool:=false;
+end;
+
+end.
+
+

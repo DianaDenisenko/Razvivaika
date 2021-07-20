@@ -1,0 +1,12 @@
+inherited Form3_LgXhdpiPh: TForm3_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Rectangle1: TRectangle
+    Size.Width = 450.000000000000000000
+  end
+  inherited Rectangle2: TRectangle
+    Size.Width = 450.000000000000000000
+    Size.Height = 622.000000000000000000
+  end
+end

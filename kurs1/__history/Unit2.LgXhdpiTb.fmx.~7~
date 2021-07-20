@@ -1,0 +1,19 @@
+inherited Form2_LgXhdpiTb: TForm2_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited Panel1: TPanel
+    Size.Width = 480.000000000000000000
+    inherited Rectangle1: TRectangle
+      Size.Width = 480.000000000000000000
+    end
+  end
+  inherited Panel2: TPanel
+    Size.Width = 480.000000000000000000
+    Size.Height = 709.000000000000000000
+    inherited Rectangle2: TRectangle
+      Size.Width = 480.000000000000000000
+      Size.Height = 709.000000000000000000
+    end
+  end
+end
